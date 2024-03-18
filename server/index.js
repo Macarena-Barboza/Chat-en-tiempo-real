@@ -4,21 +4,35 @@ import { createServer } from 'node:http';
 
 const app = express()
 const server = createServer(app)
-const io = new Server(server)
+const io = new Server(server, {
+    cors: {
+        origin: '*'
+    }
+})
 
 io.on('connection', (socket) => {
-    console.log('usuario conectado')
+    console.log('usuario Conectado!!!')
+    console.log(socket.id)
+
+
+    socket.on('disconnect', () => {
+        console.log('usuario Desconectado...')
+    })
+
+    socket.on('chat', (msj) => {
+        console.log(msj)
+        io.emit('chat', msj);
+    })
 })
 
 
-// Chequea si conecto el servidor
+
 app.get('/', (req, res) => {
     res.send('<h1>Holis</h1>')
 })
 
 
 
-// Ejecuta el Servidor 
 const port = process.env.PORT ?? 3001
 
 server.listen(port, () => {
