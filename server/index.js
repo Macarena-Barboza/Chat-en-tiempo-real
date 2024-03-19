@@ -14,13 +14,17 @@ io.on('connection', (socket) => {
     console.log('usuario Conectado!!!')
     console.log(socket.id)
 
+    socket.broadcast.emit('chat', {
+        mensajeChat: ' se conecto',
+        usuario: socket.id
+    })
+
 
     socket.on('disconnect', () => {
         console.log('usuario Desconectado...')
     })
 
     socket.on('chat', (msj) => {
-        console.log(msj)
         io.emit('chat', msj);
     })
 })
@@ -30,6 +34,7 @@ io.on('connection', (socket) => {
 app.get('/', (req, res) => {
     res.send('<h1>Holis</h1>')
 })
+
 
 
 
