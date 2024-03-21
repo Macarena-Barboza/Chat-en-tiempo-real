@@ -1,12 +1,12 @@
-// import mysql from "mysql2";
+// import mysql from 'serverless-mysql';
 
-// export const db = mysql.createConnection({
+
+// export const db = mysql({
 //     config: {
 //         host: process.env.DB_HOST,
 //         user: process.env.DB_USER,
 //         password: process.env.DB_PASSWORD,
-//         database: process.env.DATABASE,
-//         // port: process.env.DB_PORT,
+//         database: process.env.DB_DATABASE,
+//         port: process.env.DB_PORT
 //     }
 // })
-

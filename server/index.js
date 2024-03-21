@@ -1,13 +1,17 @@
 import express from "express";
 import { Server } from "socket.io";
 import { createServer } from 'node:http';
+import { db } from "./db.js";
+
+
 
 const app = express()
+
 const server = createServer(app)
 const io = new Server(server, {
     cors: {
         origin: '*'
-    }
+    },
 })
 
 io.on('connection', (socket) => {
@@ -24,7 +28,10 @@ io.on('connection', (socket) => {
         console.log('usuario Desconectado...')
     })
 
-    socket.on('chat', (msj) => {
+    socket.on('chat', async (msj) => {
+
+
+
         io.emit('chat', msj);
     })
 })
@@ -44,3 +51,4 @@ server.listen(port, () => {
     console.log(`server list http://localhost:${port}`)
 })
 
+console.log(process.env.PORT)

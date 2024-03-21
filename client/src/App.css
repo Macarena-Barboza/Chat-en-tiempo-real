@@ -1,65 +1,127 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: system-ui
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+section {
+  min-width: 338px;
+  background-color: rgb(246, 218, 246);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ________________________ */
 
 .msj {
+  padding: 3px 15px;
   border-radius: 10px;
-  margin: 14px;
+  margin: 36px;
+  position: relative;
+  box-shadow: 1px 1px 2px #0000004b;
+}
+
+.text {
+  max-width: 80px;
+  min-height: 40px;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .msj1 {
-  background-color: rgb(129, 255, 255);
-  margin-right: 110px;
+  background-color: rgb(221, 174, 255);
+  margin-right: 150px;
   text-align: start;
 }
 
 .msj2 {
-  background-color: red;
+  background-color: rgb(255, 172, 199);
   border-radius: 10px;
   margin-left: 110px;
   text-align: start;
+}
+
+.user {
+  font-size: 20px;
+  color: #f0f0f0;
+  margin: -22px auto;
+  position: absolute;
+  right: 43.5%;
+}
+
+.user1 {
+  position: absolute;
+  right: 40%;
+  padding-top: 4px;
+  margin: 4px -3px;
+  background-color: rgba(249, 102, 156, 0.567);
+}
+
+.user2 {
+  position: absolute;
+  left: 40%;
+  padding-top: 4px;
+  margin: 4px -3px;
+  background-color: rgba(206, 126, 246, 0.586);
+
+}
+
+.conte-msj {
+  padding: 15px 0px 0px;
+}
+
+
+/* __________________________________ */
+
+form {
+  margin: 5px 0px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+input {
+  border-radius: 12px;
+  padding: 8px;
+  padding: 9px 22px;
+  border: 1px solid #ccc;
+  width: 235px;
+}
+
+.button {
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  border: none;
+  text-align: center;
+}
+
+button {
+  background-color: rgb(246, 42, 110);
+}
+
+input:focus {
+  border-color: rgb(182, 100, 240);
+  outline: none;
+}
+
+@media (max-width: 450px) {
+  .user1 {
+    right: 7.5%;
+  }
+
+  .user2 {
+    left: 7.5%;
+  }
 }
