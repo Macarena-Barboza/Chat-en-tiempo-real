@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import './App.css'
 import io from 'socket.io-client';
-const socket = io('/');
+const socket = io('/#');
 
 function App() {
     const [nuevoMensaje, setNuevoMensaje] = useState('');
