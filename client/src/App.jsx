@@ -58,8 +58,6 @@ function App() {
                     <h4 >{nuevoUser}: {isConnected ? 'Conectado' : 'No Conectado'}</h4>
                     <section>
                         <div className='conte-msj'>
-
-
                             {mensajes.map((mensaje, index) => (
                                 <div key={index} className='contMsj' ref={myRef} >
                                     <p className={`user button ${mensaje.id === socket.id ? 'user1' : 'user2'}`}>
