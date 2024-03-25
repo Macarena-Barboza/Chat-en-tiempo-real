@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   display: flex;
   justify-content: center;
@@ -19,6 +20,11 @@ section {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: 87vh;
+}
+
+h4 {
+  padding-left: 15px;
 }
 
 /* ________________________ */
@@ -26,9 +32,9 @@ section {
 .msj {
   padding: 3px 15px;
   border-radius: 10px;
-  margin: 36px;
-  position: relative;
+  margin: 18px 36px;
   box-shadow: 1px 1px 2px #0000004b;
+  min-width: 110px;
 }
 
 .text {
@@ -52,6 +58,27 @@ section {
   text-align: start;
 }
 
+.contMsj {
+  position: relative;
+}
+
+.nombUser {
+  color: #797979;
+  font-size: 12px;
+}
+
+.nombUser1 {
+  position: absolute;
+  right: 43px;
+  top: -17px;
+}
+
+.nombUser2 {
+  position: absolute;
+  left: 43px;
+  top: -17px;
+}
+
 .user {
   font-size: 20px;
   color: #f0f0f0;
@@ -62,15 +89,16 @@ section {
 
 .user1 {
   position: absolute;
-  right: 40%;
+  right: -3%;
   padding-top: 4px;
   margin: 4px -3px;
   background-color: rgba(249, 102, 156, 0.567);
+  overflow: auto
 }
 
 .user2 {
   position: absolute;
-  left: 40%;
+  left: -3%;
   padding-top: 4px;
   margin: 4px -3px;
   background-color: rgba(206, 126, 246, 0.586);
@@ -78,9 +106,16 @@ section {
 }
 
 .conte-msj {
-  padding: 15px 0px 0px;
+  padding: 15px;
+  padding-bottom: 0px;
+  overflow-y: scroll;
+  height: 90%;
+  width: 290px;
 }
 
+.conte-msj::-webkit-scrollbar {
+  display: none;
+}
 
 /* __________________________________ */
 
@@ -111,6 +146,18 @@ button {
   background-color: rgb(246, 42, 110);
 }
 
+.btnLogin {
+  color: #f0f0f0;
+  border: none;
+  border-radius: 11px;
+  padding: 4px 8px;
+  font-weight: bold;
+}
+
+.login {
+  margin-top: 3rem;
+}
+
 input:focus {
   border-color: rgb(182, 100, 240);
   outline: none;
@@ -118,10 +165,10 @@ input:focus {
 
 @media (max-width: 450px) {
   .user1 {
-    right: 7.5%;
+    right: -2%;
   }
 
   .user2 {
-    left: 7.5%;
+    left: -2%;
   }
 }
