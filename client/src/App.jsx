@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import './App.css'
 import io from 'socket.io-client';
-const socket = io('/#');
+const socket = io('/');
 
 function App() {
     const [nuevoMensaje, setNuevoMensaje] = useState('');
@@ -64,7 +64,7 @@ function App() {
                                         {mensaje.id === socket.id ? nuevoUser.slice(0, 1) : mensaje.user.slice(0, 1)}
                                     </p>
                                     <span className={`nombUser ${mensaje.id === socket.id ? 'nombUser1' : 'nombUser2'}`}>
-                                        {mensaje.id === socket.id ? nuevoUser : mensaje.user.slice(0, 4)}
+                                        {mensaje.id === socket.id ? nuevoUser : mensaje.user}
                                     </span>
                                     <p className={`msj ${mensaje.id === socket.id ? 'msj2' : 'msj1'}`} >
                                         <span className='text' >{mensaje.contenido}</span>
